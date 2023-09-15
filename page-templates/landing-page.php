@@ -36,7 +36,7 @@ if (get_field('linkedin_url', 'options')) {
                 <li>Joint Venture</li>
             </ul>
             </p>
-            <?=do_shortcode('[gravityform id="1" title="false"]')?>
+            <?=do_shortcode('[contact-form-7 id="d92ac04"]')?>
         </div>
     </div>
     <div class="image">
