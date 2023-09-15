@@ -36,6 +36,7 @@ if (get_field('linkedin_url', 'options')) {
                 <li>Joint Venture</li>
             </ul>
             </p>
+            <p class="mb-2 has-small-font-size">Sign up to be the first to know when we launch.</p>
             <?=do_shortcode('[contact-form-7 id="d92ac04"]')?>
         </div>
     </div>
