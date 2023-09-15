@@ -1,0 +1,229 @@
+@import "props";
+@import "typography";
+@import "buttons";
+@import "forms";
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* end reset */
+
+.wp-site-blocks {
+  padding-block: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: var(--col-primary) !important;
+    width: min(1200px,90vw);
+    margin-inline: auto;
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    flex-direction: column;
+    @media (min-width:768px) {
+        flex-direction: row;
+    }
+}
+
+main {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.text {
+    order: 1;
+    @media (min-width: 768px) {
+        order: -1;
+    }
+    display: flex;
+    align-items: center;
+}
+
+.pre-title {
+    text-transform: uppercase;
+    font-size: var(--fs-300);
+    margin-bottom: 0.25rem;
+}
+
+h1 {
+    font-family: var(--ff-title);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-900);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-wrap: balance;
+}
+
+ul {
+    padding-inline-start: 1rem;
+    @media (min-width:768px) {
+        columns: 2;
+    }
+}
+
+.image {
+    display: grid;
+    justify-items: end;
+    &__inner {
+        aspect-ratio: 1;
+        width: 80%;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &::after {
+            content: "";
+            width: 60%;
+            aspect-ratio: 1;
+            // background-color: color-mix(in hsl, hsl(var(--hsl-accent) / .6), transparent 30%);
+            background-color: hsl(var(--hsl-accent-200) / .6);
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: color var(--transition);
+    &:hover {
+        color: var(--col-accent);
+    }
+}
+
+.phone {
+    @media (min-width:768px) {
+        text-align: end;
+    }
+}
+
+.wpcf7-text {
+  height: 45px;
+  padding: 0.25rem 0.5rem;
+  border: none;
+}
+.wpcf7-submit {
+  background-color: var(--col-accent);
+  color: white;
+  height: 45px;
+  width: 55px;
+  border: 1px solid var(--col-accent);
+  cursor: pointer;
+  font-family: "Font Awesome 6 Free";
+}
+
+.smaller {
+  font-size: var(--fs-300);
+  margin-bottom: 0.25rem;
+}
+
+// show stuff that overflows horizontally
+// * {
+//     outline: 1px solid #f00 !important;
+// }
+// show stuff that overflows horizontally via console JS
+/*
+var all = document.getElementsByTagName("*"), i = 0, rect, docWidth = document.documentElement.offsetWidth;
+for (; i < all.length; i++) {
+    rect = all[i].getBoundingClientRect();
+    if (rect.right > docWidth || rect.left < 0){
+        console.log(all[i]);
+        all[i].style.borderTop = '1px solid red';
+    }
+}
+*/
+
+// @mixin fluid-type($min-vw, $max-vw, $min-value, $max-value) {
+// 	$factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+// 	$calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
+
+// 	font-size: $min-value; // Fallback for older browsers
+// 	font-size: clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
+// }

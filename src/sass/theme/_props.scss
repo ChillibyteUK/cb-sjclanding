@@ -1,0 +1,34 @@
+$col-primary: #045bb9;
+$col-primary-400: #045bb9;
+$col-primary-900: #022f69;
+$col-primary-200: #047bdc;
+$col-secondary: #ff9305;
+$col-dark: #022F6A;
+$col-darkest: hsl(0, 0%, 2%);
+$col-highlight: hsl(23, 83%, 53%);
+// $col-highlight: #eb7024;
+$col-grey: #FFF0F0;
+
+:root {
+    --ff-body: 'Lato';
+    --ff-title: 'Abel';
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --hsl-primary: 221 36% 19%;
+    --hsl-secondary: 206 100% 40%;
+    --hsl-accent: 31 100% 50%;
+    --hsl-accent-200: 31 100% 85%;
+
+    --col-primary: hsl(var(--hsl-primary));
+    --col-secondary: hsl(var(--hsl-secondary));
+    --col-accent: hsl(var(--hsl-accent));
+    --col-accent-200: hsl(var(--hsl-accent-200));
+
+    --transition: 300ms ease;
+
+    --fs-900: clamp(2.50rem, calc(2.07rem + 2.17vw), 3.75rem);
+    --fs-300: clamp(0.75rem, calc(0.71rem + 0.22vw), 0.88rem);
+
+}
