@@ -8,7 +8,7 @@ get_header();
 
 the_post();
 ?>
-<header>
+<header class="mb-4">
     <div class="logo"><img
             src="<?=get_stylesheet_directory_uri()?>/img/sjc-logo--wo.svg"
             width="100" height="100"></div>
