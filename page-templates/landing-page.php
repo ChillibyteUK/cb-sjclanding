@@ -15,8 +15,9 @@ the_post();
     <?php
 if (get_field('linkedin_url', 'options')) {
     ?>
-    <div class="social"><a href="https://uk.linkedin.com/company/stjamess-square-capital"><i
-                class="fa-brands fa-linkedin-in"></i></a></div>
+    <div class="social"><a
+            href="<?=get_field('linkedin_url', 'options')?>"
+            target="_blank" rel="nofollow"><i class="fa-brands fa-linkedin-in"></i></a></div>
     <?php
 }
 ?>
@@ -45,11 +46,26 @@ if (get_field('linkedin_url', 'options')) {
     </div>
 </main>
 <footer>
-    <!--
-    <div class="email"><a href="mailto:hello@stjamess-capital.com"><i class="fa-solid fa-envelope"></i>
-            hello@stjamess-capital.com</a></div>
-    <div class="phone"><a href="tel:+442012345678"><i class="fa-solid fa-phone"></i> 020 1234 5678</a></div>
-    -->
+    <?php
+if (get_field('contact_email', 'options')) {
+    ?>
+    <div class="email"><a
+            href="mailto:<?=get_field('contact_email', 'options')?>"><i
+                class="fa-solid fa-envelope"></i>
+            <?=get_field('contact_email', 'options')?></a>
+    </div>
+    <?php
+}
+if (get_field('contact_phone', 'options')) {
+    ?>
+    <div class="phone"><a
+            href="tel:<?=parse_phone(get_field('contact_phone', 'options'))?>"><i
+                class="fa-solid fa-phone"></i>
+            <?=get_field('contact_phone', 'options')?></a>
+    </div>
+    <?php
+}
+?>
 </footer>
 <?php
 

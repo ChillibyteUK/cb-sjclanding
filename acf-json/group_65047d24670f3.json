@@ -1,29 +1,11 @@
 {
-    "key": "group_64d7ad6d5259e",
-    "title": "LC Service Nav",
+    "key": "group_65047d24670f3",
+    "title": "Site-Wide Settings",
     "fields": [
         {
-            "key": "field_64d7ad6e11a5b",
-            "label": "LC Service Nav",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_64d7b0b7e0da2",
-            "label": "Title",
-            "name": "title",
+            "key": "field_65047d3cfc441",
+            "label": "Contact Phone",
+            "name": "contact_phone",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -41,11 +23,30 @@
             "append": ""
         },
         {
-            "key": "field_64d7b0bde0da3",
-            "label": "Content",
-            "name": "content",
+            "key": "field_65047d48fc442",
+            "label": "Contact Email",
+            "name": "contact_email",
             "aria-label": "",
-            "type": "textarea",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65047d51fc443",
+            "label": "Linkedin URL",
+            "name": "linkedin_url",
+            "aria-label": "",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -56,17 +57,37 @@
             },
             "default_value": "",
             "maxlength": "",
-            "rows": 4,
             "placeholder": "",
-            "new_lines": "wpautop"
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_65047d33fc440",
+            "label": "GTM Property",
+            "name": "gtm_property",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "options_page",
                 "operator": "==",
-                "value": "acf\/lc-service-nav"
+                "value": "theme-general-settings"
             }
         ]
     ],
@@ -79,5 +100,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1691857106
+    "modified": 1694793051
 }
